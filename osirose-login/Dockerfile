@@ -26,6 +26,7 @@ RUN CC=gcc-7 CXX=g++-7 cmake -DOFFICIAL_BUILD=ON /osIROSE-new \
     && mkdir /server \
     && cp -r /build/bin/* /server \
     && cp /osIROSE-new/cmake/scripts/docker_start_server.sh /server/start.sh
+RUN chmod -R 777 /server/
 
 # Run the final output
 FROM ubuntu:artful

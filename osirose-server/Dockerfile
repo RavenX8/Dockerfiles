@@ -14,10 +14,10 @@ FROM builder as build
 WORKDIR /
 
 RUN git clone https://github.com/dev-osrose/osIROSE-new.git
-RUN git checkout node_server
 RUN pip install --user pyparsing
 
 WORKDIR /osIROSE-new
+RUN git checkout node_server
 RUN git submodule update --init --recursive
 
 RUN mkdir /build

@@ -33,7 +33,7 @@ RUN chmod -R 777 /server/
 FROM ubuntu:artful
 COPY --from=build /server/ /
 
-RUN apt-get update && apt-get install -y libmysqlclient-dev
+RUN apt-get update && apt-get install -y libmysqlclient-dev libcurl3
 
 ARG CONFIG_FILE=/config/server.json
 ARG SERVER=LoginServer

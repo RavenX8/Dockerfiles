@@ -1,20 +1,8 @@
-# Create the OS container
-FROM ubuntu:artful as builder
-
-LABEL maintainer "RavenX8"
-
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive \
-  apt-get -q -y install g++-7 cmake git curl libcurl4-gnutls-dev wget unzip autoconf libtool libssl-dev python python-pip perl mysql-client libmysqlclient-dev \
-  && apt-get clean
-
-  
 # Build the Target Server
-FROM builder as build
+FROM ravenx8/ubuntu-dev as build
 WORKDIR /
 
 RUN git clone https://github.com/dev-osrose/osIROSE-new.git
-RUN pip install --user pyparsing
 
 WORKDIR /osIROSE-new
 RUN git checkout node_server

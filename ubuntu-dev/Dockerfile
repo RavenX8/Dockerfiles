@@ -10,4 +10,4 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 RUN pip install --user pyparsing
 
-ENTRYPOINT [ "/bin/sh" ]
+#ENTRYPOINT [ "/bin/sh" ]

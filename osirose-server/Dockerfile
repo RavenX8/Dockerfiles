@@ -5,7 +5,6 @@ WORKDIR /
 RUN git clone https://github.com/dev-osrose/osIROSE-new.git
 
 WORKDIR /osIROSE-new
-RUN git checkout node_server
 RUN git submodule update --init --recursive
 
 RUN mkdir /build

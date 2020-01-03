@@ -1,5 +1,5 @@
 # Create the OS container
-FROM ubuntu:artful
+FROM ubuntu:bionic
 
 LABEL maintainer="RavenX8"
 

@@ -10,4 +10,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 RUN pip install --user pyparsing
 
-#ENTRYPOINT [ "/bin/sh" ]
+WORKDIR /usr
+RUN git clone https://github.com/ninja-build/ninja.git /usr/ninja && cd ninja && \
+    git checkout release && \
+	  ./configure.py --bootstrap && \
+	  cd ..
+	  
+ENV PATH="/usr/ninja:${PATH}"

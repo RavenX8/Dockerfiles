@@ -19,7 +19,7 @@ RUN CC=gcc-8 CXX=g++-8 cmake -DOFFICIAL_BUILD=ON /osIROSE-new \
     && chmod -R 777 /server/
 
 # Run the final output
-FROM ubuntu:bionic
+FROM ubuntu:rolling
 COPY --from=build /server/ /opt/osirose/
 
 RUN apt-get update && apt-get install -y libmysqlclient-dev libcurl4-gnutls-dev

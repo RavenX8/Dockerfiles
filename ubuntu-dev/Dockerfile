@@ -1,5 +1,5 @@
 # Create the OS container
-FROM ubuntu:bionic
+FROM ubuntu:rolling
 
 LABEL maintainer="RavenX8"
 

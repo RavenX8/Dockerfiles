@@ -12,7 +12,7 @@ WORKDIR /build
 RUN CC=gcc-8 CXX=g++-8 cmake -DOFFICIAL_BUILD=ON /osIROSE-new \
     && CC=gcc-8 CXX=g++-8 cmake --build . --config ${build_config:-Release} \
     && mkdir /server \
-    && cp -r /build/3rdparty/*.so* /server \
+    && cp -r /build/3rdparty/**/*.so* /server \
     && cp -r /build/bin/* /server \
     && rm -r /server/symbols \
     && cp /osIROSE-new/cmake/scripts/docker_start_server.sh /server/start.sh \

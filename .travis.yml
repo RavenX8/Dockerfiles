@@ -9,31 +9,31 @@ jobs:
       os: linux
       env: REPO_SLUG=ravenx8/osirose $REPO_TAG=database-latest
       script:
-        - docker build -t osirose/database ${TRAVIS_BUILD_DIR}/osirose-server/database.Dockerfile
+        - docker build -t osirose/database - < ${TRAVIS_BUILD_DIR}/osirose-server/database.Dockerfile
     - name: "Node Server"
       arch: amd64
       os: linux
       env: REPO_SLUG=ravenx8/osirose $REPO_TAG=node-latest
       script:
-        - docker build -t osirose/node ${TRAVIS_BUILD_DIR}/osirose-server/node.Dockerfile
+        - docker build -t osirose/node - < ${TRAVIS_BUILD_DIR}/osirose-server/node.Dockerfile
     - name: "Login Server"
       arch: amd64
       os: linux
       env: REPO_SLUG=ravenx8/osirose $REPO_TAG=login-latest
       script:
-        - docker build -t osirose/login ${TRAVIS_BUILD_DIR}/osirose-server/login.Dockerfile
+        - docker build -t osirose/login - < ${TRAVIS_BUILD_DIR}/osirose-server/login.Dockerfile
     - name: "Char Server"
       arch: amd64
       os: linux
       env: REPO_SLUG=ravenx8/osirose $REPO_TAG=char-latest
       script:
-        - docker build -t osirose/char ${TRAVIS_BUILD_DIR}/osirose-server/char.Dockerfile
+        - docker build -t osirose/char - < ${TRAVIS_BUILD_DIR}/osirose-server/char.Dockerfile
     - name: "Map Server"
       arch: amd64
       os: linux
       env: REPO_SLUG=ravenx8/osirose $REPO_TAG=map-latest
       script:
-        - docker build -t osirose/map ${TRAVIS_BUILD_DIR}/osirose-server/map.Dockerfile
+        - docker build -t osirose/map - < ${TRAVIS_BUILD_DIR}/osirose-server/map.Dockerfile
 
 deploy:
   provider: script

@@ -7,31 +7,31 @@ jobs:
     - name: "Database Server"
       arch: amd64
       os: linux
-      env: REPO_SLUG=ravenx8/osirose REPO_TAG=database-latest
+      env: REPO_SLUG=ravenx8/osirose REPO_TAG=database-nightly
       script:
         - docker build -t $REPO_SLUG:$REPO_TAG - < ${TRAVIS_BUILD_DIR}/osirose-server/database.Dockerfile
     - name: "Node Server"
       arch: amd64
       os: linux
-      env: REPO_SLUG=ravenx8/osirose REPO_TAG=node-latest
+      env: REPO_SLUG=ravenx8/osirose REPO_TAG=node-nightly
       script:
         - docker build -t $REPO_SLUG:$REPO_TAG - < ${TRAVIS_BUILD_DIR}/osirose-server/node.Dockerfile
     - name: "Login Server"
       arch: amd64
       os: linux
-      env: REPO_SLUG=ravenx8/osirose REPO_TAG=login-latest
+      env: REPO_SLUG=ravenx8/osirose REPO_TAG=login-nightly
       script:
         - docker build -t $REPO_SLUG:$REPO_TAG - < ${TRAVIS_BUILD_DIR}/osirose-server/login.Dockerfile
     - name: "Char Server"
       arch: amd64
       os: linux
-      env: REPO_SLUG=ravenx8/osirose REPO_TAG=char-latest
+      env: REPO_SLUG=ravenx8/osirose REPO_TAG=char-nightly
       script:
         - docker build -t $REPO_SLUG:$REPO_TAG - < ${TRAVIS_BUILD_DIR}/osirose-server/char.Dockerfile
     - name: "Map Server"
       arch: amd64
       os: linux
-      env: REPO_SLUG=ravenx8/osirose REPO_TAG=map-latest
+      env: REPO_SLUG=ravenx8/osirose REPO_TAG=map-nightly
       script:
         - docker build -t $REPO_SLUG:$REPO_TAG - < ${TRAVIS_BUILD_DIR}/osirose-server/map.Dockerfile
 

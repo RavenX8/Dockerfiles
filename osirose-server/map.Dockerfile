@@ -3,8 +3,8 @@ FROM ravenx8/ubuntu-dev as build
 WORKDIR /opt
 
 RUN git clone https://github.com/dev-osrose/osIROSE-new.git /opt/osIROSE-new-src && \
-    git checkout combat-cleanup && \
     cd osIROSE-new-src && \
+    git checkout combat-cleanup && \
     git submodule update --init --recursive && \
     chmod -R 777 /opt/osIROSE-new-src/cmake/scripts/
 

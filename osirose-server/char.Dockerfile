@@ -29,8 +29,7 @@ ARG SERVER=CharServer
 
 ENV CONFIG_FILE $CONFIG_FILE
 ENV SERVER $SERVER
-ENV LISTEN_IP "`ip a show eth0 | grep -Po 'inet \K[\d.]+'`"
-ENV EXTERNAL_IP "`ip a show eth0 | grep -Po 'inet \K[\d.]+'`"
+ENV LISTEN_IP "0.0.0.0"
 
 VOLUME ["/opt/osirose/scripts"]
 VOLUME ["/srv/osirose"]
